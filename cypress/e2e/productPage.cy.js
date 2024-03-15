@@ -10,20 +10,16 @@ const productPage = new ProductPage();
 beforeEach(() => {
   loginPage.fillCredentialsData("standard_user", "secret_sauce");
   loginPage.clickSignInButton();
+  mainPage.clickOnFirstProduct();
 });
 
-describe("Main Page tests", () => {
-  it("click on  product and back", () => {
-    mainPage.clickOnFirstProduct();
-    productPage.backButton();
+describe("Product Page tests", () => {
+  it("Add product to cart at product page", () => {
+    productPage.addFirstProductToCart();
   });
 
-  it("Add product to cart at main page", () => {
-    mainPage.addFirstProductToCart();
+  it("Remove product from cart ", () => {
+    productPage.addFirstProductToCart();
+    productPage.removeProductFromCart();
   });
-
-  it("Remove first product from cart", () => {
-    mainPage.addFirstProductToCart();
-    mainPage.removeFirstProductFromCart()
-  })
 });

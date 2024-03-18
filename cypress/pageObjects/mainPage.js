@@ -33,6 +33,10 @@ class MainPage {
       .should("be.empty");
   }
 
+   clickOnshoppingcart() {
+  cy.get(selectors.shoppingCart).click();
+  }
+
 }
 
 export default MainPage;

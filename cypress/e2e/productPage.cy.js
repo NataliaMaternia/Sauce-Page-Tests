@@ -18,7 +18,7 @@ describe("Product Page tests", () => {
     productPage.addFirstProductToCart();
   });
 
-  it("Remove product from cart ", () => {
+  it("Remove product from cart st product page", () => {
     productPage.addFirstProductToCart();
     productPage.removeProductFromCart();
   });

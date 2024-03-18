@@ -22,8 +22,12 @@ describe("Main Page tests", () => {
     mainPage.addFirstProductToCart();
   });
 
-  it("Remove first product from cart", () => {
+  it("Remove first product from cart at main page", () => {
     mainPage.addFirstProductToCart();
     mainPage.removeFirstProductFromCart()
+  })
+
+  it("Click on shopping cart", () => {
+    mainPage.clickOnshoppingcart();
   })
 });

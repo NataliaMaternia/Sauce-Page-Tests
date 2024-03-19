@@ -15,8 +15,6 @@ class LoginPage {
   fillCredentialsData(usernameData, passwordData) {
     cy.visit("https://www.saucedemo.com/", {
       onBeforeLoad(win) {
-
-        
         delete win.navigator.__proto__.serviceWorker;
       },
     });

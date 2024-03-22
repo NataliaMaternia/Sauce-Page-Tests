@@ -11,7 +11,11 @@ beforeEach(() => {
 });
 
 describe("Header Label tests", () => {
-  it("Logout", () => {
-    headerLabel.logout();
+  it("Click on logout", () => {
+    headerLabel.clickOnlogout();
   });
+
+    it("Click reset app state", () => {
+      headerLabel.clickOnResetAppState();
+    });
 });

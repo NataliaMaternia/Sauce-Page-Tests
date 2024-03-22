@@ -1,12 +1,18 @@
 const selectors = {
   burgerMenu: "#react-burger-menu-btn",
-  logoutButton: "#logout_sidebar_link"
+  logout: "#logout_sidebar_link",
+  resetAppState: "#reset_sidebar_link",
 };
 
 class HeaderLabel {
-  logout() {
+  clickOnlogout() {
     cy.get(selectors.burgerMenu).click();
-    cy.get(selectors.logoutButton).click();
+    cy.get(selectors.logout).click();
+  }
+
+  clickOnResetAppState() {
+    cy.get(selectors.burgerMenu).click();
+    cy.get(selectors.resetAppState).click();
   }
 }
 export default HeaderLabel;

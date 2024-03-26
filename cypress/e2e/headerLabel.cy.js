@@ -18,4 +18,8 @@ describe("Header Label tests", () => {
     it("Click reset app state", () => {
       headerLabel.clickOnResetAppState();
     });
+
+    it("Verify text on headerLabel", () => {
+      headerLabel.verifyTextOnHeaderLabel();
+    });
 });

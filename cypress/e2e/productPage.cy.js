@@ -7,13 +7,13 @@ const loginPage = new LoginPage();
 const mainPage = new MainPage();
 const productPage = new ProductPage();
 
-beforeEach(() => {
-  loginPage.fillCredentialsData("standard_user", "secret_sauce");
-  loginPage.clickSignInButton();
-  mainPage.clickOnFirstProduct();
-});
-
 describe("Product Page tests", () => {
+  beforeEach(() => {
+    loginPage.fillCredentialsData("standard_user", "secret_sauce");
+    loginPage.clickSignInButton();
+    mainPage.clickOnFirstProduct();
+  });
+
   it("Add product to cart at product page", () => {
     productPage.addFirstProductToCart();
   });

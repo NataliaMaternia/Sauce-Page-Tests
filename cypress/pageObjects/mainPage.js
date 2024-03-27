@@ -11,13 +11,12 @@ class MainPage {
   }
 
   clickOnFirstProduct() {
-    cy.get(selectors.inventoryItemName).first().click();
+    cy.get(selectors.inventoryItemName).eq(0).click();
   }
 
   addFirstProductToCart() {
-    cy.get(selectors.addOrRemovebutton).first()
-    .should('contain', 'Add to cart');
-    cy.get(selectors.addOrRemovebutton).first().click();
+    cy.get(selectors.addOrRemovebutton).eq(0).should("contain", "Add to cart");
+    cy.get(selectors.addOrRemovebutton).eq(0).click();
     cy.get(selectors.shoppingCart)
       .invoke("text")
       .then(parseInt)
@@ -25,18 +24,15 @@ class MainPage {
   }
 
   removeFirstProductFromCart() {
-    cy.get(selectors.addOrRemovebutton).first()
-    .should('contain', 'Remove');
-    cy.get(selectors.addOrRemovebutton).first().click();
-    cy.get(selectors.shoppingCart)
-      .invoke("text")
-      .should("be.empty");
+    cy.get(selectors.addOrRemovebutton).eq(0).should("contain", "Remove");
+
+    cy.get(selectors.addOrRemovebutton).eq(0).click();
+    cy.get(selectors.shoppingCart).invoke("text").should("be.empty");
   }
 
-   clickOnshoppingcart() {
-  cy.get(selectors.shoppingCart).click();
+  clickOnshoppingcart() {
+    cy.get(selectors.shoppingCart).click();
   }
-
 }
 
 export default MainPage;

@@ -7,19 +7,19 @@ const loginPage = new LoginPage();
 const mainPage = new MainPage();
 const cartPage = new CartPage();
 
-beforeEach(() => {
+describe("Cart page tests", () => {
+  beforeEach(() => {
     loginPage.fillCredentialsData("standard_user", "secret_sauce");
     loginPage.clickSignInButton();
     mainPage.clickOnFirstProduct();
     mainPage.clickOnshoppingcart();
   });
 
-describe("Cart page tests", () => {
   it("click on checkout button", () => {
     cartPage.clickOnCheckoutButton();
   });
 
-    it("click on continue shopping button", () => {
+  it("click on continue shopping button", () => {
     cartPage.clickOnContinueShoppingButton();
-    });
   });
+});

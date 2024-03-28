@@ -22,4 +22,8 @@ describe("Cart page tests", () => {
   it("click on continue shopping button", () => {
     cartPage.clickOnContinueShoppingButton();
   });
+
+  it("check pathname of cart page", () => {
+    cartPage.pathname();
+  })
 });

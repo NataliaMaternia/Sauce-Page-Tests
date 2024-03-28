@@ -33,6 +33,10 @@ class MainPage {
   clickOnshoppingcart() {
     cy.get(selectors.shoppingCart).click();
   }
+  
+  pathname() {
+    cy.location("pathname").should("equal", "/inventory.html");
+  }
 }
 
 export default MainPage;

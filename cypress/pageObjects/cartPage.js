@@ -12,5 +12,9 @@ class CartPage {
     cy.get(selectors.continueShoppingButton).click();
  }
 
+ pathname() {
+   cy.location("pathname").should("equal", "/cart.html");
+ }
+
 }
 export default CartPage;

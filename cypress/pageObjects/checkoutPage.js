@@ -12,5 +12,14 @@ class CheckoutPage {
     cy.get(selectors.postalCode).type("50-040 Wrocław");
     cy.get(selectors.continueButton).click();
   }
+
+  pathnameCheckoutYourInformation() {
+    cy.location("pathname").should("equal", "/checkout-step-one.html");
+  }
+  
+  pathnameCheckoutOverwiew() {
+    cy.location("pathname").should("equal", "/checkout-step-two.html");
+  }
+  
 }
 export default CheckoutPage;

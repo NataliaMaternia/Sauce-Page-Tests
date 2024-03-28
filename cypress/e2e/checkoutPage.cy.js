@@ -20,4 +20,15 @@ describe("Checkout tests", () => {
   it("fill user information", () => {
     checkoutPage.fillUserInformation();
   });
+
+  it("check pathname of checkout:'your information' page", () => {
+    checkoutPage.pathnameCheckoutYourInformation();
+  });
+
+  it("check pathname of checkout:'overview' page", () => {
+    checkoutPage.fillUserInformation();
+    checkoutPage.pathnameCheckoutOverwiew();
+ });
+
+
 });

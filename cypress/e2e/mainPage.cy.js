@@ -30,4 +30,9 @@ describe("Main Page tests", () => {
   it("Click on shopping cart", () => {
     mainPage.clickOnshoppingcart();
   });
+
+  it("check pathname of main page", () => {
+    mainPage.pathname();
+  })
+
 });

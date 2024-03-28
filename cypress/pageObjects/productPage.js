@@ -11,9 +11,9 @@ class ProductPage {
   }
 
   addFirstProductToCart() {
-    cy.get(selectors.addOrRemovebutton).first()
+    cy.get(selectors.addOrRemovebutton).eq(0)
     .should('contain', 'Add to cart');
-    cy.get(selectors.addOrRemovebutton).first().click();
+    cy.get(selectors.addOrRemovebutton).eq(0).click();
     cy.get(selectors.shoppingCart)
       .invoke("text")
       .then(parseInt)

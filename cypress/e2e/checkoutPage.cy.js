@@ -21,6 +21,16 @@ describe("Checkout tests", () => {
     checkoutPage.fillUserInformation();
   });
 
+  it("click on cancel button", () => {
+    checkoutPage.fillUserInformation();
+    checkoutPage.clickOnCancelButton();
+  });
+
+  it("click on finish button", () => {
+    checkoutPage.fillUserInformation();
+    checkoutPage.clickOnFinishButton();
+  });
+
   it("check pathname of checkout:'your information' page", () => {
     checkoutPage.pathnameCheckoutYourInformation();
   });
@@ -28,7 +38,12 @@ describe("Checkout tests", () => {
   it("check pathname of checkout:'overview' page", () => {
     checkoutPage.fillUserInformation();
     checkoutPage.pathnameCheckoutOverwiew();
- });
+  });
 
+  it("check pathname of checkout:'complete' page", () => {
+    checkoutPage.fillUserInformation();
+    checkoutPage.clickOnFinishButton();
+    checkoutPage.pathnameCheckoutComplete();
+  })
 
 });

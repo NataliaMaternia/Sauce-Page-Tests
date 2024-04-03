@@ -6,6 +6,7 @@ const loginPage = new LoginPage();
 const mainPage = new MainPage();
 
 describe("Login page tests", () => {
+  
   it("Visit the Sauce Page", () => {
     cy.visit("https://www.saucedemo.com/");
   });

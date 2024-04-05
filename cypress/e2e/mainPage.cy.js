@@ -27,11 +27,27 @@ describe("Main Page tests", () => {
 
   it("Remove first product from cart at main page", () => {
     // given
-    mainPage.addFirstProductToCart(); 
+    mainPage.addFirstProductToCart();
     // when
     mainPage.removeFirstProductFromCart();
     // then
     headerLabel.checkIfShoppingCartIsEmpty();
+  });
+
+  it("Sort by Name A to Z", () => {
+    mainPage.sortByNameAtoZ();
+  });
+
+  it("Sort by Name Z to A", () => {
+    mainPage.sortByNameZtoA();
+  });
+
+  it("Sort by price low to high", () => {
+    mainPage.sortByPriceLowToHigh();
+  });
+
+  it("Sort by price high to low", () => {
+    mainPage.sortByPriceHighToLow();
   });
 
   it("Click on shopping cart", () => {
@@ -40,6 +56,5 @@ describe("Main Page tests", () => {
 
   it("check pathname of main page", () => {
     mainPage.pathname();
-  })
-
+  });
 });

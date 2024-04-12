@@ -4,17 +4,16 @@ const selectors = {
 };
 
 class CartPage {
- clickOnCheckoutButton() {
+  clickOnCheckoutButton() {
     cy.get(selectors.checkoutButton).click();
- }
+  }
 
- clickOnContinueShoppingButton() {
+  clickOnContinueShoppingButton() {
     cy.get(selectors.continueShoppingButton).click();
- }
+  }
 
- pathname() {
-   cy.location("pathname").should("equal", "/cart.html");
- }
-
+  verifyPathname() {
+    cy.location("pathname").should("equal", "/cart.html");
+  }
 }
 export default CartPage;

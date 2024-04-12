@@ -14,6 +14,12 @@ class CheckoutPage {
     cy.get(selectors.postalCode).type("50-040 Wrocław");
   }
 
+  verifyIfcheckoutIsVisible() {
+    cy.get(".title")
+    .should("exist")
+    .and("have.text", "Checkout: Your Information");
+}
+
   clickOnContinueButton() {
     cy.get(selectors.continueButton).click();
   }

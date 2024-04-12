@@ -7,8 +7,10 @@ const selectors = {
 };
 
 class MainPage {
-  verifyIfProductElementIsDisplayed() {
-    cy.get(selectors.productElement).should("be.visible");
+  verifyIfProductElementIsVisible() {
+    cy.get(selectors.productElement)
+      .should("exist")
+      .and("have.text", "Products");
   }
 
   clickOnFirstProduct() {
@@ -26,29 +28,29 @@ class MainPage {
   }
 
   sortByNameAtoZ() {
-    cy.get(selectors.productSortContainer).select('Name (A to Z)'),
-    cy.get(selectors.productSortContainer).should('have.value', 'az');
- }
+    cy.get(selectors.productSortContainer).select("Name (A to Z)"),
+      cy.get(selectors.productSortContainer).should("have.value", "az");
+  }
 
-sortByNameZtoA() {
-   cy.get(selectors.productSortContainer).select('Name (Z to A)'),
-   cy.get(selectors.productSortContainer).should('have.value', 'za');
-}
+  sortByNameZtoA() {
+    cy.get(selectors.productSortContainer).select("Name (Z to A)"),
+      cy.get(selectors.productSortContainer).should("have.value", "za");
+  }
 
-sortByPriceLowToHigh() {
-  cy.get(selectors.productSortContainer).select('Price (low to high)'),
-  cy.get(selectors.productSortContainer).should('have.value', 'lohi');
-}
+  sortByPriceLowToHigh() {
+    cy.get(selectors.productSortContainer).select("Price (low to high)"),
+      cy.get(selectors.productSortContainer).should("have.value", "lohi");
+  }
 
-sortByPriceHighToLow() {
-  cy.get(selectors.productSortContainer).select('Price (high to low)'),
-  cy.get(selectors.productSortContainer).should('have.value', 'hilo');
-}
+  sortByPriceHighToLow() {
+    cy.get(selectors.productSortContainer).select("Price (high to low)"),
+      cy.get(selectors.productSortContainer).should("have.value", "hilo");
+  }
 
   clickOnshoppingcart() {
     cy.get(selectors.shoppingCart).click();
   }
-  
+
   pathname() {
     cy.location("pathname").should("equal", "/inventory.html");
   }

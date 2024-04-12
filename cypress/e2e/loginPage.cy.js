@@ -6,7 +6,6 @@ const loginPage = new LoginPage();
 const mainPage = new MainPage();
 
 describe("Login page tests", () => {
-  
   it("Visit the Sauce Page", () => {
     cy.visit("https://www.saucedemo.com/");
   });
@@ -19,7 +18,7 @@ describe("Login page tests", () => {
   it("Login into bank accout using hardcoded data", () => {
     loginPage.fillCredentialsData("standard_user", "secret_sauce");
     loginPage.clickSignInButton();
-    mainPage.verifyIfProductElementIsDisplayed();
+    mainPage.verifyIfProductElementIsVisible();
   });
 
   it("Login with bad credentials", () => {
@@ -35,7 +34,7 @@ describe("Login page tests", () => {
         loginData.passwordUser
       );
       loginPage.clickSignInButton();
-      mainPage.verifyIfProductElementIsDisplayed();
+      mainPage.verifyIfProductElementIsVisible();
     });
   });
 });

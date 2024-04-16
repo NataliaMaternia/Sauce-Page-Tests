@@ -12,7 +12,7 @@ class CartPage {
     cy.get(selectors.continueShoppingButton).click();
   }
 
-  verifyPathname() {
+  verifyCartPathname() {
     cy.location("pathname").should("equal", "/cart.html");
   }
 }

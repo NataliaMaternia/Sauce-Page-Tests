@@ -11,7 +11,7 @@ const checkoutPage = new CheckoutPage();
 
 describe("Cart page tests", () => {
   beforeEach(() => {
-    // given
+    // arrange
     loginPage.fillCredentialsData("standard_user", "secret_sauce");
     loginPage.clickSignInButton();
     mainPage.clickOnFirstProduct();
@@ -19,22 +19,22 @@ describe("Cart page tests", () => {
   });
 
   it("click on checkout button", () => {
-    // when
+    // act
     cartPage.clickOnCheckoutButton();
-    // then
+    // assert
     checkoutPage.verifyIfcheckoutIsVisible();
   });
 
   it("click on continue shopping button", () => {
-    // when
+    // act
     cartPage.clickOnContinueShoppingButton();
-    // then
+    // assert
     mainPage.verifyIfProductElementIsVisible();
   });
 
   it("check pathname of cart page", () => {
-    // when go to page in before section
-    // then
-    cartPage.verifyPathname();
+    // act go to page in before section
+    // assert
+    cartPage.verifyCartPathname();
   });
 });

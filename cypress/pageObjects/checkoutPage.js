@@ -5,6 +5,7 @@ const selectors = {
   continueButton: "#continue",
   cancelButton: "#cancel",
   finishButton: "#finish",
+  errorMessageConrainer: ".error-message-container",
 };
 
 class CheckoutPage {
@@ -16,9 +17,13 @@ class CheckoutPage {
 
   verifyIfcheckoutIsVisible() {
     cy.get(".title")
-    .should("exist")
-    .and("have.text", "Checkout: Your Information");
-}
+      .should("be.visible")
+      .and("have.text", "Checkout: Your Information");
+  }
+
+  verifyIfErrorMessageCointainerDoNotContainError() {
+  cy.get(selectors.errorMessageConrainer).should("not.contain", "Error");
+  }
 
   clickOnContinueButton() {
     cy.get(selectors.continueButton).click();
@@ -30,6 +35,5 @@ class CheckoutPage {
   pathnameCheckoutYourInformation() {
     cy.location("pathname").should("equal", "/checkout-step-one.html");
   }
-
 }
 export default CheckoutPage;

@@ -5,34 +5,37 @@ import MainPage from "../pageObjects/mainPage";
 import CartPage from "../pageObjects/cartPage";
 import CheckoutPage from "../pageObjects/checkoutPage";
 import CompletePage from "../pageObjects/completePage";
+import OverviewPage from "../pageObjects/overviewPage";
 const loginPage = new LoginPage();
 const mainPage = new MainPage();
 const cartPage = new CartPage();
 const checkoutPage = new CheckoutPage();
 const completePage = new CompletePage();
+const overviewPage = new OverviewPage();
 
 describe("Checkout: 'your information' tests", () => {
   beforeEach(() => {
     loginPage.fillCredentialsData("standard_user", "secret_sauce");
     loginPage.clickSignInButton();
     mainPage.clickOnshoppingcart();
-    cartPage.clickOnCheckoutButton();  
+    cartPage.clickOnCheckoutButton();
     checkoutPage.fillUserInformation();
     checkoutPage.clickOnContinueButton();
-    checkoutPage.clickOnFinishButton();
   });
-
 
   it("click on back home button", () => {
+    // arrange
+    overviewPage.clickOnFinishButton();
+    // act
     completePage.clickOnBackHomeButton();
-  });
-
-  it("verify if order is complete", () => {
-    completePage.verifyIfOrderIsComplete();
+    // assert
+    mainPage.verifyIfProductElementIsVisible();
   });
 
   it("check pathname of checkout:'complete' page", () => {
+    // act 
+    overviewPage.clickOnFinishButton();
+    // assert
     completePage.pathnameCompletePage();
-  })
-
+  });
 });

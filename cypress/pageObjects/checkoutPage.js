@@ -4,7 +4,6 @@ const selectors = {
   postalCode: "#postal-code",
   continueButton: "#continue",
   cancelButton: "#cancel",
-  finishButton: "#finish",
   errorMessageConrainer: ".error-message-container",
 };
 

@@ -13,14 +13,14 @@ const overviewPage = new OverviewPage();
 
 describe("Checkout: 'your information' tests", () => {
   beforeEach(() => {
-    // arrange
     loginPage.fillCredentialsData("standard_user", "secret_sauce");
     loginPage.clickSignInButton();
     mainPage.clickOnshoppingcart();
-    cartPage.clickOnCheckoutButton();
   });
 
   it("fill user information", () => {
+    // arrange
+    cartPage.clickOnCheckoutButton();
     // act
     checkoutPage.fillUserInformation();
     // assert
@@ -29,6 +29,7 @@ describe("Checkout: 'your information' tests", () => {
 
   it("click on cancel button", () => {
     // arrange
+    cartPage.clickOnCheckoutButton();
     checkoutPage.fillUserInformation();
     // act
     checkoutPage.clickOnCancelButton();
@@ -38,6 +39,7 @@ describe("Checkout: 'your information' tests", () => {
 
   it("click on continue button", () => {
     // arrange
+    cartPage.clickOnCheckoutButton();
     checkoutPage.fillUserInformation();
     // act
     checkoutPage.clickOnContinueButton();
@@ -46,7 +48,8 @@ describe("Checkout: 'your information' tests", () => {
   });
 
   it("check pathname of checkout:'your information' page", () => {
-    // act go to page in before section
+    // act 
+    cartPage.clickOnCheckoutButton();
     // assert
     checkoutPage.pathnameCheckoutYourInformation();
   });

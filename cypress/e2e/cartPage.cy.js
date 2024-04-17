@@ -11,7 +11,6 @@ const checkoutPage = new CheckoutPage();
 
 describe("Cart page tests", () => {
   beforeEach(() => {
-    // arrange
     loginPage.fillCredentialsData("standard_user", "secret_sauce");
     loginPage.clickSignInButton();
     mainPage.clickOnFirstProduct();
@@ -19,6 +18,8 @@ describe("Cart page tests", () => {
   });
 
   it("click on checkout button", () => {
+    // arrange
+    mainPage.clickOnshoppingcart();
     // act
     cartPage.clickOnCheckoutButton();
     // assert
@@ -26,6 +27,8 @@ describe("Cart page tests", () => {
   });
 
   it("click on continue shopping button", () => {
+    // arrange
+    mainPage.clickOnshoppingcart();
     // act
     cartPage.clickOnContinueShoppingButton();
     // assert
@@ -33,7 +36,8 @@ describe("Cart page tests", () => {
   });
 
   it("check pathname of cart page", () => {
-    // act go to page in before section
+    // act 
+    mainPage.clickOnshoppingcart();
     // assert
     cartPage.verifyCartPathname();
   });

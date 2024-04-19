@@ -1,5 +1,5 @@
 const selectors = {
-  productElement: ".title",
+  productsElement: ".title",
   inventoryItemName: ".inventory_item_name",
   addOrRemovebutton: ".inventory_item_description button",
   productSortContainer: ".product_sort_container",
@@ -7,8 +7,8 @@ const selectors = {
 };
 
 class MainPage {
-  verifyIfProductElementIsVisible() {
-    cy.get(selectors.productElement)
+  verifyIfProductsElementIsVisible() {
+    cy.get(selectors.productsElement)
       .should("exist")
       .and("have.text", "Products");
   }

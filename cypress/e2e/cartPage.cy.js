@@ -32,11 +32,11 @@ describe("Cart page tests", () => {
     // act
     cartPage.clickOnContinueShoppingButton();
     // assert
-    mainPage.verifyIfProductElementIsVisible();
+    mainPage.verifyIfProductsElementIsVisible();
   });
 
   it("check pathname of cart page", () => {
-    // act 
+    // act
     mainPage.clickOnshoppingcart();
     // assert
     cartPage.verifyCartPathname();

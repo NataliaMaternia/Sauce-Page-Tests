@@ -29,11 +29,11 @@ describe("Checkout: 'your information' tests", () => {
     // act
     completePage.clickOnBackHomeButton();
     // assert
-    mainPage.verifyIfProductElementIsVisible();
+    mainPage.verifyIfProductsElementIsVisible();
   });
 
   it("check pathname of checkout:'complete' page", () => {
-    // act 
+    // act
     overviewPage.clickOnFinishButton();
     // assert
     completePage.pathnameCompletePage();

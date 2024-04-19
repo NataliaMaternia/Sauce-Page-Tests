@@ -11,15 +11,33 @@ describe("Product Page tests", () => {
   beforeEach(() => {
     loginPage.fillCredentialsData("standard_user", "secret_sauce");
     loginPage.clickSignInButton();
+  });
+
+  it("Add first product to cart at product page", () => {
+    // arrange
     mainPage.clickOnFirstProduct();
+    // act
+    productPage.addFirstProductToCart();
+    // assert
+    productPage.clickOnBackToProductsButton();
   });
 
-  it("Add product to cart at product page", () => {
+  it("Remove product from cart at product page", () => {
+    // arrange
+    mainPage.clickOnFirstProduct();
     productPage.addFirstProductToCart();
-  });
-
-  it("Remove product from cart st product page", () => {
-    productPage.addFirstProductToCart();
+    // act
     productPage.removeProductFromCart();
+    // assert
+    productPage.checkIfShoppingCartIsEmpty();
+  });
+
+  it("Click on back to products button", () => {
+    // arrange
+    mainPage.clickOnFirstProduct();
+    // act
+    productPage.clickOnBackToProductsButton();
+    // assert
+    mainPage.verifyIfProductsElementIsVisible();
   });
 });

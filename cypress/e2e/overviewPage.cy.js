@@ -28,8 +28,7 @@ describe("Checkout tests", () => {
     // act
     overviewPage.clickOnCancelButton();
     // assert
-    mainPage.verifyIfProductElementIsVisible();
-
+    mainPage.verifyIfProductsElementIsVisible();
   });
 
   it("click on finish button", () => {
@@ -47,5 +46,4 @@ describe("Checkout tests", () => {
     // assert
     overviewPage.pathnameOverwiewPage();
   });
-
 });

@@ -4,11 +4,21 @@ const selectors = {
   resetAppState: "#reset_sidebar_link",
   headerLabelText: ".app_logo",
   shoppingCart: "#shopping_cart_container",
+  UnfoldedBurgerMenu: ".bm-item-list",
+  
 };
 
 class HeaderLabel {
-  clickOnlogout() {
+
+  clickOnBurgerMenu() {
     cy.get(selectors.burgerMenu).click();
+  }
+
+  checkIfBurgerMenuIsUnfolded() {
+    cy.get(selectors.UnfoldedBurgerMenu).click();
+  }
+
+  clickOnlogout() {
     cy.get(selectors.logout).click();
   }
 
@@ -21,11 +31,6 @@ class HeaderLabel {
 
   checkIfShoppingCartIsEmpty() {
     cy.get(selectors.shoppingCart).invoke("text").should("be.empty");
-  }
-
-  clickOnResetAppState() {
-    cy.get(selectors.burgerMenu).click();
-    cy.get(selectors.resetAppState).click();
   }
 
   verifyTextOnHeaderLabel() {

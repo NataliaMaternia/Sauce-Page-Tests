@@ -11,12 +11,21 @@ describe("Header Label tests", () => {
     loginPage.clickSignInButton();
   });
 
-  it("Click on logout", () => {
-    headerLabel.clickOnlogout();
+  it("Click on burger menu", () => {
+    // arrange in before section
+    // act
+    headerLabel.clickOnBurgerMenu();
+    // assert
+    headerLabel.checkIfBurgerMenuIsUnfolded();
   });
 
-  it("Click reset app state", () => {
-    headerLabel.clickOnResetAppState();
+  it("Click on logout", () => {
+    // arrange
+    headerLabel.clickOnBurgerMenu();
+    // act
+    headerLabel.clickOnlogout();
+    // assert
+    loginPage.checkIfSignInButtonIsVissible();
   });
 
   it("Verify text on headerLabel", () => {

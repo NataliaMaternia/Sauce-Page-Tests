@@ -28,6 +28,10 @@ class LoginPage {
       .and("contain", "Username and password do not match");
   }
 
+  checkIfSignInButtonIsVissible() {
+    cy.get(selectors.signInButton).should("be.visible");
+  }
+
   clickSignInButton() {
     cy.get(selectors.signInButton).click();
   }

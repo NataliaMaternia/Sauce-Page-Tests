@@ -9,8 +9,7 @@ const productPage = new ProductPage();
 
 describe("Product Page tests", () => {
   beforeEach(() => {
-    loginPage.fillCredentialsData("standard_user", "secret_sauce");
-    loginPage.clickSignInButton();
+    loginPage.openPageAndCorrectlyLogin();
   });
 
   it("Add first product to cart at product page", () => {

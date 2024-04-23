@@ -5,21 +5,36 @@ const selectors = {
 };
 
 class LoginPage {
-  verifyIfBasicElementsAreDisplayed() {
-    cy.visit("https://www.saucedemo.com/");
-    cy.get(selectors.loginTextbox).should("be.visible");
-    cy.get(selectors.passwordTextbox).should("be.visible");
-    cy.get(selectors.signInButton).should("be.visible");
+
+  openPageAndCorrectlyLogin() {
+    this.openPage();
+    cy.fixture("credentials").then((loginData) => {
+      this.fillCredentialsData(loginData.loginUser, loginData.passwordUser);
+    });
+    this.clickSignInButton();
   }
 
-  fillCredentialsData(usernameData, passwordData) {
+  openPage() {
     cy.visit("https://www.saucedemo.com/", {
       onBeforeLoad(win) {
         delete win.navigator.__proto__.serviceWorker;
       },
     });
+  }
+
+  fillCredentialsData(usernameData, passwordData) {
     cy.get(selectors.loginTextbox).type(usernameData);
     cy.get(selectors.passwordTextbox).type(passwordData);
+  }
+
+  clickSignInButton() {
+    cy.get(selectors.signInButton).click();
+  }
+  
+  verifyIfBasicElementsAreDisplayed() {
+    cy.get(selectors.loginTextbox).should("be.visible");
+    cy.get(selectors.passwordTextbox).should("be.visible");
+    cy.get(selectors.signInButton).should("be.visible");
   }
 
   verifyBadCredentialsAlert() {
@@ -30,10 +45,6 @@ class LoginPage {
 
   checkIfSignInButtonIsVissible() {
     cy.get(selectors.signInButton).should("be.visible");
-  }
-
-  clickSignInButton() {
-    cy.get(selectors.signInButton).click();
   }
 }
 export default LoginPage;

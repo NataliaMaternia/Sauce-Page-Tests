@@ -13,8 +13,7 @@ const overviewPage = new OverviewPage();
 
 describe("Checkout: 'your information' tests", () => {
   beforeEach(() => {
-    loginPage.fillCredentialsData("standard_user", "secret_sauce");
-    loginPage.clickSignInButton();
+    loginPage.openPageAndCorrectlyLogin();
     mainPage.clickOnshoppingcart();
   });
 

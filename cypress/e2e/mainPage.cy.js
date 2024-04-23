@@ -11,18 +11,24 @@ const headerLabel = new HeaderLabel();
 
 describe("Main Page tests", () => {
   beforeEach(() => {
-    loginPage.fillCredentialsData("standard_user", "secret_sauce");
-    loginPage.clickSignInButton();
+   loginPage.openPageAndCorrectlyLogin();
   });
 
-  it("click on  product and back", () => {
+  it("click on product and back", () => {
+    // arrange
     mainPage.clickOnFirstProduct();
-    productPage.backButton();
+    // act
+    productPage.clickOnBackToProductsButton();
+    // assert
+    mainPage.verifyIfProductsElementIsVisible();
   });
 
   it("Add product to cart at main page", () => {
+    // arrange
     mainPage.addFirstProductToCart();
+    // act
     headerLabel.checkIfShoppingCartIsGreaterThan0();
+    // assert
   });
 
   it("Remove first product from cart at main page", () => {

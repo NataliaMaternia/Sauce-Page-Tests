@@ -15,8 +15,7 @@ const completePage = new CompletePage();
 
 describe("Checkout tests", () => {
   beforeEach(() => {
-    loginPage.fillCredentialsData("standard_user", "secret_sauce");
-    loginPage.clickSignInButton();
+    loginPage.openPageAndCorrectlyLogin();
     mainPage.clickOnshoppingcart();
     cartPage.clickOnCheckoutButton();
     checkoutPage.fillUserInformation();

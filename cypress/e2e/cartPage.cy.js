@@ -11,8 +11,7 @@ const checkoutPage = new CheckoutPage();
 
 describe("Cart page tests", () => {
   beforeEach(() => {
-    loginPage.fillCredentialsData("standard_user", "secret_sauce");
-    loginPage.clickSignInButton();
+    loginPage.openPageAndCorrectlyLogin();
     mainPage.clickOnFirstProduct();
     mainPage.clickOnshoppingcart();
   });

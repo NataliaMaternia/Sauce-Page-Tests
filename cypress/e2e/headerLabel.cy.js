@@ -7,8 +7,7 @@ const headerLabel = new HeaderLabel();
 
 describe("Header Label tests", () => {
   beforeEach(() => {
-    loginPage.fillCredentialsData("standard_user", "secret_sauce");
-    loginPage.clickSignInButton();
+    loginPage.openPageAndCorrectlyLogin();
   });
 
   it("Click on burger menu", () => {

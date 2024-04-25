@@ -1,6 +1,7 @@
 const selectors = {
   checkoutButton: "#checkout",
   continueShoppingButton: "#continue-shopping",
+
 };
 
 class CartPage {
@@ -10,6 +11,12 @@ class CartPage {
 
   clickOnContinueShoppingButton() {
     cy.get(selectors.continueShoppingButton).click();
+  }
+
+  verifyIfYourCartElementIsVisible() {
+    cy.get(".title")
+      .should("exist")
+      .and("have.text", "Your Cart")
   }
 
   verifyCartPathname() {

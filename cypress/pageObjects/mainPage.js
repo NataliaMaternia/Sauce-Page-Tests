@@ -51,6 +51,22 @@ class MainPage {
     cy.get(selectors.shoppingCart).click();
   }
 
+  verifyIfProductsAreSortByNameZtoA() {
+    cy.get(selectors.inventoryItemName).eq(0).should("contain", "T-Shirt (Red)");
+  }
+
+  verifyIfProductsAreSortByNameAtoZ() {
+    cy.get(selectors.inventoryItemName).eq(0).should("have.text", "Sauce Labs Backpack");
+  }
+
+  verifyIfProductsAreSortByPriceLowToHigh() {
+    cy.get(selectors.inventoryItemName).eq(0).should("have.text", "Sauce Labs Onesie");
+  }
+
+  verifyIfProductsAreSortByPriceHighToLow() {
+    cy.get(selectors.inventoryItemName).eq(0).should("have.text", "Sauce Labs Fleece Jacket");
+  }
+
   pathname() {
     cy.location("pathname").should("equal", "/inventory.html");
   }

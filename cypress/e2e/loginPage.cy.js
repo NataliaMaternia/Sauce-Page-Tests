@@ -7,7 +7,9 @@ const mainPage = new MainPage();
 
 describe("Login page tests", () => {
   it("Visit the Sauce Page", () => {
+    // act
     cy.visit("https://www.saucedemo.com/");
+    // assert
     cy.url().should("equal", "https://www.saucedemo.com/");
   });
 

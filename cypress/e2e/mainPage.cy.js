@@ -1,5 +1,6 @@
 /// <reference types="cypress" />
 
+import CartPage from "../pageObjects/cartPage";
 import HeaderLabel from "../pageObjects/headerLabel";
 import LoginPage from "../pageObjects/loginPage";
 import MainPage from "../pageObjects/mainPage";
@@ -8,6 +9,7 @@ const loginPage = new LoginPage();
 const mainPage = new MainPage();
 const productPage = new ProductPage();
 const headerLabel = new HeaderLabel();
+const cartPage = new CartPage();
 
 describe("Main Page tests", () => {
   beforeEach(() => {
@@ -32,32 +34,47 @@ describe("Main Page tests", () => {
   });
 
   it("Remove first product from cart at main page", () => {
-    // given
+    // arrange
     mainPage.addFirstProductToCart();
-    // when
-    mainPage.removeFirstProductFromCart();
-    // then
+    // act
+    mainPage.removeFirstProductFromCart(); 
+    // assert
     headerLabel.checkIfShoppingCartIsEmpty();
   });
 
   it("Sort by Name A to Z", () => {
+    // act
     mainPage.sortByNameAtoZ();
+    // assert
+    mainPage.verifyIfProductsAreSortByNameAtoZ();
   });
 
   it("Sort by Name Z to A", () => {
+    // act
     mainPage.sortByNameZtoA();
+    // assert
+    mainPage.verifyIfProductsAreSortByNameZtoA();
   });
 
   it("Sort by price low to high", () => {
+    // act
     mainPage.sortByPriceLowToHigh();
+    mainPage.verifyIfProductsAreSortByPriceLowToHigh();
+    // assert
   });
 
   it("Sort by price high to low", () => {
+    // act
     mainPage.sortByPriceHighToLow();
+    // assert
+    mainPage.verifyIfProductsAreSortByPriceHighToLow();
   });
 
   it("Click on shopping cart", () => {
+    // act
     mainPage.clickOnshoppingcart();
+    // assert
+    cartPage.verifyIfYourCartElementIsVisible();
   });
 
   it("check pathname of main page", () => {

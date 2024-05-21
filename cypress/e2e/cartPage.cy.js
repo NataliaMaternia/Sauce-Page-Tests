@@ -13,7 +13,6 @@ describe("Cart page tests", () => {
   beforeEach(() => {
     loginPage.openPageAndCorrectlyLogin();
     mainPage.clickOnFirstProduct();
-    mainPage.clickOnshoppingcart();
   });
 
   it("click on checkout button", () => {

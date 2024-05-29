@@ -13,7 +13,7 @@ const checkoutPage = new CheckoutPage();
 const completePage = new CompletePage();
 const overviewPage = new OverviewPage();
 
-describe("Checkout: 'your information' tests", () => {
+describe("Complete page tests", () => {
   beforeEach(() => {
     loginPage.openPageAndCorrectlyLogin();
     mainPage.clickOnshoppingcart();

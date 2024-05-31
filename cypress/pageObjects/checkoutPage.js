@@ -9,7 +9,7 @@ const selectors = {
 
 class CheckoutPage {
   fillUserInformation() {
-    cy.get(selectors.firstName).type("Jan");
+    cy.get(selectors.firstName).type("");
     cy.get(selectors.lastName).type("Kowalski");
     cy.get(selectors.postalCode).type("50-040 Wrocław");
   }

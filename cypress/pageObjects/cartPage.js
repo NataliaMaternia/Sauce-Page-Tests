@@ -20,6 +20,7 @@ class CartPage {
   }
 
   verifyCartPathname() {
+    cy.wa
     cy.location("pathname").should("equal", "/cart.html");
   }
 }

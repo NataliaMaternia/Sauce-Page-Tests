@@ -16,15 +16,15 @@ describe("Product Page tests", () => {
     // arrange
     mainPage.clickOnFirstProduct();
     // act
-    productPage.addFirstProductToCart();
+    productPage.addProductToCart(); 
     // assert
-    productPage.clickOnBackToProductsButton();
+    productPage.checkIfShoppingCartIsNotEmpty();
   });
 
   it("Remove product from cart at product page", () => {
     // arrange
     mainPage.clickOnFirstProduct();
-    productPage.addFirstProductToCart();
+    productPage.addProductToCart();
     // act
     productPage.removeProductFromCart();
     // assert

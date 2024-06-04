@@ -26,11 +26,10 @@ describe("Main Page tests", () => {
   });
 
   it("Add product to cart at main page", () => {
-    // arrange
-    mainPage.addFirstProductToCart();
     // act
-    headerLabel.checkIfShoppingCartIsGreaterThan0();
+    mainPage.addFirstProductToCart();
     // assert
+    headerLabel.checkIfShoppingCartIsGreaterThan0();
   });
 
   it("Remove first product from cart at main page", () => {
@@ -59,8 +58,9 @@ describe("Main Page tests", () => {
   it("Sort by price low to high", () => {
     // act
     mainPage.sortByPriceLowToHigh();
-    mainPage.verifyIfProductsAreSortByPriceLowToHigh();
     // assert
+    mainPage.verifyIfProductsAreSortByPriceLowToHigh();
+    
   });
 
   it("Sort by price high to low", () => {
